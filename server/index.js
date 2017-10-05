@@ -14,13 +14,15 @@ var pool = mysql.createPool({
 
 var clientPath = path.join(__dirname, "../client");
 
+app.get('/chirps/*/update', function(req, res) {
+    res.sendFile(path.join(clientPath, 'single_update.html'));
+});
+
 app.get('/chirps/*', function(req, res) {
     res.sendFile(path.join(clientPath, 'single_view.html'));
 });
 
-app.get('/chirps/*/update', function(req, res) {
-    res.sendFile(path.join(clientPath, 'single_update.html'));
-});
+
 
 app.get('/chirps', function(req, res) {
     res.sendFile(path.join(clientPath, 'list.html'));
@@ -32,7 +34,7 @@ app.use(bodyParser.json());
 app
   .route("/api/chirps")
   .get(function(req, res) {
-    rows("ChirpUser")
+    rows("ChirpUser") //list.html loads the joined tables: Chirp and User
       .then(function(chirps) {
         res.send(chirps);
       })
@@ -57,6 +59,7 @@ app.route('/api/chirps/:id')
     .get(function(req, res) {
         row('GetSingleChirp', [req.params.id])
         .then(function(chirp) {
+            console.log(chirp);
             res.send(chirp);
         }).catch(function(err) {
             console.log(err);
@@ -82,6 +85,17 @@ app.route('/api/chirps/:id')
 
 app.route("/api/users").get(function(req, res) {
   rows("GetUsers")
+    .then(function(users) {
+      res.send(users);
+    })
+    .catch(function(err) {
+      console.log(err);
+      res.sendStatus(500);
+    });
+});
+
+app.route("/api/user").get(function(req, res) {
+  row("GetOneUser")
     .then(function(users) {
       res.send(users);
     })

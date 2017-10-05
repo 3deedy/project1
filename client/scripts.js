@@ -49,7 +49,7 @@ $.ajax({
     $timestamp.text(new Date(chirp.time).toLocaleString());
 
     $username.appendTo($chirpDiv);
-    $delButton.appendTo($chirpDiv);
+    // $delButton.appendTo($chirpDiv);
     $message.appendTo($link);
     $link.appendTo($chirpDiv);
     $timestamp.appendTo($chirpDiv);
@@ -86,8 +86,6 @@ function deleteChirp(id) {
         console.log(err);
     });
 }
-
-
 
 function populateUsers() {
     $.ajax({

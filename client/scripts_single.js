@@ -6,10 +6,13 @@ $.ajax({
     method: 'GET',
     url: '/api/chirps/' + id
 }).then(function(chirp) {
+    console.log(chirp);
     addChirpDiv(chirp);
 }, function(err) {
     console.log(err);
-});
+}); 
+
+
 
 function addChirpDiv(chirp) {
     var $chirpDiv = $('<div class="chirp"></div>');
@@ -17,21 +20,16 @@ function addChirpDiv(chirp) {
     // var $update = $('<textarea id="chirp-message" cols="50" rows="5"></textarea>')
     var $user = $('<p id="user"></p>');
     var $timestamp = $('<p id="timestamp"></p>');
-    var $buttonBlock = $('<div class="button-block"></div>');
-    var $editButton = $('<a class="btn btn-default" href="/single_update.html" id="update">u</a>');
-    $editButton.click(function() {
-        // $.ajax({
-        //     method: 'GET'
-        //     url: '/api/chirps/' + id
-        // }).then(function()
-        window.location.pathname = '/chirps/' + id + '/update';
-        // $update.appendTo($chirpDiv);
-    // }, function(err){
-    //     console.log(err);
-    });
+    var $buttonBlock = $('<div class="input-group" id="button-block"></div>');
+    var $editButton = $('<a class="btn btn-default" id="update-button">u</a>');
+    $editButton.attr('href', '/chirps/' + chirp.id + '/update');
+    // $editButton.click(function(chirp) {
+        // instead of window.pathname.location...
+    //     });
+    
     var $delButton = $("<button class='btn btn-default' id='delete'>x</button>");
     $delButton.click(function() {
-        if (confirm('Are you sure you want to delete this chirp?')) {
+        if (confirm('Click OK to confirm delete')) {
             $.ajax({
                 method: 'DELETE',
                 url: '/api/chirps/' + id
@@ -58,4 +56,4 @@ function addChirpDiv(chirp) {
     
 
     $chirpDiv.appendTo('#chirp-list');
-}
+};

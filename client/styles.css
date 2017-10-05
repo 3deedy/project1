@@ -5,8 +5,11 @@ body {
 .container {
 	background: RGBA(211, 211, 211, 0.8);
 	margin-top: 15%;
+	margin-right: 10%;
 	border-radius: 7px;
 	border: 2px dotted white;
+    width: 100%;
+
 }
 
 .chirp {
@@ -27,14 +30,25 @@ body {
 	float: right;
 }
 
-#update {
+#chirp-update {
+	float: right;
+}
+#update-button {
 	border: 2px solid white;
-	border-radius: 50%;
 	width: 35px;
 	background: RGBA(211, 211, 211, 0.1);
 	color: white;
 	font-weight: bold;
 	float: right;
+}
+
+#update-change-button {
+	border: 2px solid white;
+	width: 35px;
+	background: RGBA(211, 211, 211, 0.1);
+	color: white;
+	font-weight: bold;
+	
 }
 
 #username {
