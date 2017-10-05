@@ -1,0 +1,21 @@
+body {
+	background-image: url(https://thumbs.dreamstime.com/z/jerogl%C3%ADficos-egipcios-4129199.jpg);
+}
+
+.jumbotron {
+ 	float: middle;
+    width: 50%;
+}
+
+
+a:link {
+	color: yellow;
+}
+
+a:hover {
+	color: yellow;
+};
+
+/*a:active {
+	color: white;
+};*/

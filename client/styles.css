@@ -1,0 +1,59 @@
+body {
+	background-image: url(https://thumbs.dreamstime.com/z/jerogl%C3%ADficos-egipcios-4129199.jpg);
+}
+
+.container {
+	background: RGBA(211, 211, 211, 0.8);
+	margin-top: 15%;
+	border-radius: 7px;
+	border: 2px dotted white;
+}
+
+.chirp {
+	border-bottom: 1px dotted white;
+}
+
+.jumbotron {
+    position: fixed;
+    width: 100%;
+}
+
+#delete {
+	border: 2px solid red;
+	border-radius: 50%;
+	background: RGBA(211, 211, 211, 0.1);
+	color: red;
+	font-weight: bold;
+	float: right;
+}
+
+#update {
+	border: 2px solid white;
+	border-radius: 50%;
+	width: 35px;
+	background: RGBA(211, 211, 211, 0.1);
+	color: white;
+	font-weight: bold;
+	float: right;
+}
+
+#username {
+	font-weight: bold;
+}
+
+#message {
+	font-size: large;
+}
+
+#timestamp {
+	font-size: small;
+	font-style: italic;
+}
+
+a:link {
+	color: black;
+}
+
+a:hover {
+	color: yellow;
+};
